@@ -1,31 +1,21 @@
-import {useState} from 'react';
+import Link from 'next/link';
 
 function Home(){
     return (
     <div>
-        <h1><CapsLock>Home Takashi - Estudando meu primeiro site !</CapsLock></h1>
-        <Contador/>
+        <h1>Home Takashi - Estudando meu primeiro site !</h1>
+        <div>
+        <Link href="/sobre">
+            <a>Acessar página Sobre</a>
+        </Link>
+        </div>
+        <div>
+        <Link href="/teste">
+            <a>Acessar página Teste</a>
+        </Link>
+        </div>
     </div>
     )
-}
-
-function Contador(){
-    const [contador,setContador] = useState(1);
-    function adicionarContador(){
-        setContador(contador+1);
-    }
-    return(
-        <div>
-            <div>{contador}</div>
-            <button onClick={adicionarContador}>Adicionar</button>
-        </div>
-    )
-}
-
-function CapsLock(props){
-    const textoInserido = props.children;
-    const textoEmCapsLock = textoInserido.toUpperCase();
-    return <div>{textoEmCapsLock}</div>
 }
 
 export default Home
